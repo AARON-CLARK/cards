@@ -40,6 +40,10 @@ boxServer <- function(id, title, desc, value,
       val_max_nchar <- 31
       is_true <- !(value %in% c(0, "pkg_metric_error", "NA", "", "FALSE", NA))
 
+      # print(glue::glue("value: '{value %in% c('pkg_metric_error', 'NA', NA)}'"))
+      # print(glue::glue("nchar: '{nchar(value) <= val_max_nchar}'"))
+      # print(glue::glue("%in%: '{value %in% c('TRUE', 'FALSE')}'"))
+
       if (value %in% c("pkg_metric_error", "NA", NA)) {
         value <- "Not found"
       } else if (is_perc) {
@@ -48,9 +52,9 @@ boxServer <- function(id, title, desc, value,
         value <- a(ifelse(nchar(value) <= val_max_nchar, value,
                           glue::glue("{stringr::str_sub(value, 1, (val_max_nchar - 3))}...")
         ), href = value)
-      } # unfortunately, adding the href can sometimes force the footer to fall
-      # outside the card when val_max_nchar is too large.
-      else if (value %in% c("TRUE", "FALSE")) {
+        # unfortunately, adding the href can sometimes force the footer to fall
+        # outside the card when val_max_nchar is too large.
+      } else if (value %in% c("TRUE", "FALSE")) {
         value <- ifelse(value == "TRUE", "Yes", "No")
       }
 
