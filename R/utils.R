@@ -59,8 +59,8 @@ add_box_card <- function(
     value = 'Card Value',
     succ_icon = 'black-tie',
     icon_class = "text-info",
-    is_perc = FALSE,
-    is_url = FALSE
+    is_perc = 0,
+    is_url = 0
     ){
   if(is.null(data)) {
     data <- dplyr::tibble(

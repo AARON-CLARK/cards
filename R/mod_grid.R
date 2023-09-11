@@ -44,8 +44,8 @@ gridServer <- function(id, cards) {
                   title = m['title'],
                   desc = m['desc'],
                   value = m['value'],
-                  is_perc = m['is_perc'],
-                  is_url = m['is_url'],
+                  is_perc = m['is_perc']== 1,
+                  is_url = m['is_url']== 1,
                   succ_icon = m['succ_icon'],
                   icon_class = m['icon_class'],
                   type = m['type']

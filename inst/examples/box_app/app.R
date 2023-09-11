@@ -23,8 +23,8 @@ server <- function(input, output, session) {
       value = 'Card Value',
       succ_icon = 'black-tie',
       icon_class = "text-info",
-      is_perc = FALSE,
-      is_url = FALSE
+      is_perc = 0,
+      is_url = 0
     ) %>%
     add_box_card(
       name = "card_name2",
@@ -33,8 +33,8 @@ server <- function(input, output, session) {
       value = 'Card Value2',
       succ_icon = 'black-tie',
       icon_class = "text-info",
-      is_perc = FALSE,
-      is_url = FALSE
+      is_perc = 0,
+      is_url = 0
     )
   })
 
